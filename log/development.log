@@ -57,3 +57,629 @@ Processing by BlogController#index as HTML
 Completed 200 OK in 48ms (Views: 28.5ms | ActiveRecord: 3.5ms | Allocations: 63335)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:19:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:19:23.877405') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 4.2ms | Allocations: 14726)
+
+
+  
+NameError (Could not render layout: undefined local variable or method `application_blank' for #<BlogController:0x0000000000b270>):
+  
+actionview (7.1.3.3) lib/action_view/layouts.rb:332:in `_layout'
+actionview (7.1.3.3) lib/action_view/layouts.rb:419:in `_default_layout'
+actionview (7.1.3.3) lib/action_view/layouts.rb:395:in `block in _layout_for_option'
+actionview (7.1.3.3) lib/action_view/renderer/template_renderer.rb:109:in `resolve_layout'
+actionview (7.1.3.3) lib/action_view/renderer/template_renderer.rb:89:in `find_layout'
+actionview (7.1.3.3) lib/action_view/renderer/template_renderer.rb:72:in `render_with_layout'
+actionview (7.1.3.3) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.1.3.3) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.1.3.3) lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+actionview (7.1.3.3) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+actionview (7.1.3.3) lib/action_view/rendering.rb:135:in `block in _render_template'
+actionview (7.1.3.3) lib/action_view/base.rb:291:in `in_rendering_context'
+actionview (7.1.3.3) lib/action_view/rendering.rb:134:in `_render_template'
+actionpack (7.1.3.3) lib/action_controller/metal/streaming.rb:256:in `_render_template'
+actionview (7.1.3.3) lib/action_view/rendering.rb:121:in `render_to_body'
+actionpack (7.1.3.3) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.1.3.3) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.1.3.3) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.1.3.3) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.1.3.3) lib/action_controller/metal/instrumentation.rb:29:in `block (2 levels) in render'
+/usr/share/rvm/rubies/ruby-3.2.1/lib/ruby/3.2.0/benchmark.rb:311:in `realtime'
+activesupport (7.1.3.3) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.1.3.3) lib/action_controller/metal/instrumentation.rb:29:in `block in render'
+actionpack (7.1.3.3) lib/action_controller/metal/instrumentation.rb:98:in `cleanup_view_runtime'
+activerecord (7.1.3.3) lib/active_record/railties/controller_runtime.rb:39:in `cleanup_view_runtime'
+actionpack (7.1.3.3) lib/action_controller/metal/instrumentation.rb:28:in `render'
+actionpack (7.1.3.3) lib/action_controller/metal/implicit_render.rb:37:in `default_render'
+actionpack (7.1.3.3) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.3) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.3) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.3) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.3) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.3) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.3) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.3) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.3) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.3) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.3) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.3) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.3) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.3) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.3) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.3) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.3) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.3) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.3) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.3) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.3) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.3) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.3) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.3) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.3) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.3) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.11) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.11) lib/rack/etag.rb:29:in `call'
+rack (3.0.11) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.11) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.3) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.3) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.3) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.3) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.3) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.11) lib/rack/method_override.rb:28:in `call'
+rack (3.0.11) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.11) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.3) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.3) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:20:05 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:20:05.756931') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.2ms | Allocations: 99)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.4ms | Allocations: 300)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 2524)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:21:22 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:21:22.474598') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.4ms | Allocations: 290)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 2462)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-05-19 10:21:27 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1071)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 47900)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.4ms | Allocations: 48564)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2024-05-19 10:21:44 -0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.0ms | Allocations: 2582)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2866)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4636)
+Completed 200 OK in 28ms (Views: 5.0ms | ActiveRecord: 3.0ms | Allocations: 14750)
+
+
+Started POST "/admin/posts" for 127.0.0.1 at 2024-05-19 10:25:20 -0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Página de Flores", "body"=>"<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n", "data_publicacao"=>"2024-05-19T10:22"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1095)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'data_publicacao' for Post.):
+  
+app/controllers/posts_controller.rb:24:in `create'
+Started GET "/admin/" for 127.0.0.1 at 2024-05-19 10:27:51 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (10.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3983)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 26961)
+Completed 200 OK in 20ms (Views: 6.3ms | ActiveRecord: 13.1ms | Allocations: 28551)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2024-05-19 10:27:53 -0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.7ms | Allocations: 1495)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1770)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3528)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 6401)
+
+
+Started POST "/admin/posts" for 127.0.0.1 at 2024-05-19 10:28:08 -0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Página de Flores", "body"=>"<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n", "published_date"=>"2024-05-19T10:28"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "published_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Página de Flores"], ["body", "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n"], ["published_date", "2024-05-19 10:28:00"], ["created_at", "2024-05-19 13:28:08.335395"], ["updated_at", "2024-05-19 13:28:08.335395"]]
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/admin/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms | Allocations: 3415)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:28:08 -0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.5ms | Allocations: 1415)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2382)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2473)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 5121)
+
+
+  
+ActionView::Template::Error (undefined method `data_publicacao' for #<Post id: 1, title: "Página de Flores", body: "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta...", published_date: "2024-05-19 10:28:00.000000000 +0000", created_at: "2024-05-19 13:28:08.335395000 +0000", updated_at: "2024-05-19 13:28:08.335395000 +0000">):
+    11: 
+    12:   <p>
+    13:     <strong>Data publicacao:</strong>
+    14:     <%= post.data_publicacao %>
+    15:   </p>
+    16: 
+    17: </div>
+  
+app/views/posts/_post.html.erb:14
+app/views/posts/show.html.erb:3
+Started GET "/admin/" for 127.0.0.1 at 2024-05-19 10:30:34 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.3ms | Allocations: 221)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4349)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 27326)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 2.3ms | Allocations: 28919)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2024-05-19 10:32:00 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.5ms | Allocations: 195)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4235)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 27214)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.5ms | Allocations: 28807)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2024-05-19 10:35:13 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.8ms | Allocations: 328)
+  Rendered posts/index.html.erb within layouts/application (Duration: 25.9ms | Allocations: 16177)
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 63330)
+Completed 200 OK in 60ms (Views: 49.0ms | ActiveRecord: 4.2ms | Allocations: 73274)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-05-19 10:35:17 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 885)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2646)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.4ms | Allocations: 2918)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:35:28 -0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2548)
+Completed 200 OK in 10ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 5198)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-05-19 10:35:57 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2638)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.8ms | Allocations: 2908)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:36:00 -0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 589)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2342)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 3007)
+
+
+Started GET "/admin/posts/1/edit" for 127.0.0.1 at 2024-05-19 10:36:01 -0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:63:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 9.8ms | Allocations: 5552)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 11.1ms | Allocations: 5878)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 7631)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.6ms | Allocations: 8355)
+
+
+Started PATCH "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:39:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Página de Flores", "body"=>"<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n", "published_date"=>"2024-05-19T10:40"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:40:in `block in update'
+  [1m[36mPost Update (0.7ms)[0m  [1m[33mUPDATE "posts" SET "published_date" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["published_date", "2024-05-19 10:40:00"], ["updated_at", "2024-05-19 13:39:58.624274"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/admin/posts/1
+Completed 302 Found in 8ms (ActiveRecord: 3.1ms | Allocations: 7997)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:39:58 -0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 187)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1184)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 24164)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 25545)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:41:57 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:41:57.428809') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.7ms | Allocations: 98)
+  Rendered layout layouts/application_blank.html.erb (Duration: 1.6ms | Allocations: 285)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.1ms | Allocations: 1560)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:42:15 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:42:15.101394') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 862)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:43:15 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:43:15.813379') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.3ms | Allocations: 289)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 2.2ms | Allocations: 5173)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-05-19 10:43:31 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.4ms | Allocations: 190)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1429)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 24292)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.6ms | Allocations: 24935)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:43:38 -0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 778)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2531)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 3871)
+
+
+Started GET "/admin/posts/1/edit" for 127.0.0.1 at 2024-05-19 10:43:40 -0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.6ms | Allocations: 1485)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1800)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3553)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 4276)
+
+
+Started PATCH "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:43:48 -0300
+Processing by PostsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Página de Flores", "body"=>"<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n", "published_date"=>"2024-05-19T10:40"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+Redirected to http://127.0.0.1:3000/admin/posts/1
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 1298)
+
+
+Started GET "/admin/posts/1" for 127.0.0.1 at 2024-05-19 10:43:48 -0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 656)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2409)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 3118)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-19 10:43:52 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:43:52.707106') ORDER BY "posts"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.1ms | Allocations: 105)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 863)
+
+
+Started GET "/admin" for 127.0.0.1 at 2024-05-19 10:46:30 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.3ms | Allocations: 190)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4239)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 27192)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 1.6ms | Allocations: 28785)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2024-05-19 10:46:32 -0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.5ms | Allocations: 1468)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1748)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3505)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3862)
+
+
+Started POST "/admin/posts" for 127.0.0.1 at 2024-05-19 10:47:02 -0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Carro", "body"=>"<h1>Aqui tenho um carro</h1>", "published_date"=>"2024-05-19T10:46"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "published_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Carro"], ["body", "<h1>Aqui tenho um carro</h1>"], ["published_date", "2024-05-19 10:46:00"], ["created_at", "2024-05-19 13:47:02.155066"], ["updated_at", "2024-05-19 13:47:02.155066"]]
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/admin/posts/2
+Completed 302 Found in 8ms (ActiveRecord: 4.0ms | Allocations: 2356)
+
+
+Started GET "/admin/posts/2" for 127.0.0.1 at 2024-05-19 10:47:02 -0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 840)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2594)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 3999)
+
+
+Started GET "/signup" for ::1 at 2024-05-19 10:47:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/" for ::1 at 2024-05-19 10:47:12 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:47:12.028419') ORDER BY id desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.5ms | Allocations: 95)
+  Rendered layout layouts/application_blank.html.erb (Duration: 1.0ms | Allocations: 281)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.8ms | Allocations: 1248)
+
+
+Started GET "/" for ::1 at 2024-05-19 10:49:34 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:49:34.066149') ORDER BY id desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.2ms | Allocations: 105)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.5ms | Allocations: 295)
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 2.4ms | Allocations: 5052)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2024-05-19 10:51:27 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1541)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 24459)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.8ms | Allocations: 25104)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2024-05-19 10:51:28 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1005)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2767)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 3031)
+
+
+Started GET "/admin/posts/new" for 127.0.0.1 at 2024-05-19 10:51:30 -0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.1ms | Allocations: 1449)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3485)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3822)
+
+
+Started GET "/admin/posts" for 127.0.0.1 at 2024-05-19 10:51:41 -0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:6
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1014)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2772)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.8ms | Allocations: 3037)
+
+
+Started POST "/admin/posts" for 127.0.0.1 at 2024-05-19 10:51:43 -0300
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Página de Flores", "body"=>"<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n", "published_date"=>"2024-05-19T10:51"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "published_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Página de Flores"], ["body", "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Flores Maravilhosas</title>\n  <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css\" rel=\"stylesheet\">\n  <style>\n    body {\n      background-color: #f8f9fa;\n    }\n    .jumbotron {\n      background-image: url('https://example.com/flower-background.jpg');\n      background-size: cover;\n      color: white;\n    }\n    .card-img-top {\n      height: 200px;\n      object-fit: cover;\n    }\n  </style>\n</head>\n<body>\n\n  <header class=\"jumbotron text-center\">\n    <h1 class=\"display-4\">Flores Maravilhosas</h1>\n    <p class=\"lead\">Descubra a beleza e a diversidade das flores.</p>\n  </header>\n\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/rose.jpg\" class=\"card-img-top\" alt=\"Rosa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Rosa</h5>\n            <p class=\"card-text\">A rosa é uma das flores mais populares e é conhecida por sua beleza e fragrância.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/tulip.jpg\" class=\"card-img-top\" alt=\"Tulipa\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Tulipa</h5>\n            <p class=\"card-text\">As tulipas são flores vibrantes e coloridas que florescem na primavera.</p>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-md-4\">\n        <div class=\"card mb-4\">\n          <img src=\"https://example.com/sunflower.jpg\" class=\"card-img-top\" alt=\"Girassol\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">Girassol</h5>\n            <p class=\"card-text\">O girassol é conhecido por sua grande flor amarela que segue o movimento do sol.</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <footer class=\"text-center mt-4 py-4\">\n    <p>&copy; 2024 Flores Maravilhosas. Todos os direitos reservados.</p>\n  </footer>\n\n  <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\"></script>\n  <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"></script>\n  <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js\"></script>\n</body>\n</html>\n"], ["published_date", "2024-05-19 10:51:00"], ["created_at", "2024-05-19 13:51:43.433305"], ["updated_at", "2024-05-19 13:51:43.433305"]]
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/admin/posts/3
+Completed 302 Found in 4ms (ActiveRecord: 2.4ms | Allocations: 2245)
+
+
+Started GET "/admin/posts/3" for 127.0.0.1 at 2024-05-19 10:51:43 -0300
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/_post.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2591)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 3975)
+
+
+Started GET "/" for ::1 at 2024-05-19 10:51:46 -0300
+Processing by BlogController#index as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (published_date <= '2024-05-19 13:51:46.402835') ORDER BY id desc LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/blog_controller.rb:5:in `index'
+  Rendering layout layouts/application_blank.html.erb
+  Rendering blog/index.html.erb within layouts/application_blank
+  Rendered blog/index.html.erb within layouts/application_blank (Duration: 0.1ms | Allocations: 10)
+  Rendered layout layouts/application_blank.html.erb (Duration: 0.2ms | Allocations: 111)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 854)
+
+
